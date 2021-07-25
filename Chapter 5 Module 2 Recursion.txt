@@ -1,0 +1,126 @@
+#include<stdio.h>
+int factorial(int number) //<///// << ////
+{                                      //
+	if (number ==1 || number == 0)     //
+	{                                  //
+		return 1;                      //
+	}                                  //
+	else                               // 
+	{                                  //
+		return number*factorial(number-1);	//Recursion of Function
+	}
+}
+
+int main()
+{
+	int num;
+	printf("Enter a no. :");
+	scanf("%d", &num);
+	printf("\nThe factorial of %d is %d", num, factorial(num));
+
+	return 0;
+}
+
+// Recurtion problem can be solved iteratively (with the help of loops).
+------------------------------------------------------------------------------------------------------------
+//Indirect recursion
+// WAP to print numbers from 1 to 10 . when number is odd add by 2 and subtarct by 1.
+#include <stdio.h>
+void odd();
+void even();
+int main()
+{
+    int num, n1;
+    num = 1;
+    printf("Enter the last number :");
+    scanf("%d", &n1);
+
+    odd(num, n1);
+    return 0;
+}
+
+void odd(int num, int n)
+{
+
+    if (num <= n)
+    {
+        printf("%d ", num + 2);
+        num++;
+        even(num, n);
+    }
+    return;
+}
+void even(int num, int n)
+{
+    if (num <= n)
+    {
+        printf("%d ", num - 1);
+        num++;
+        odd(num, n);
+    }
+    return;
+}
+------------------------------------------------------------------------------------------------------
+// Find sum of first n natural numbers
+#include <stdio.h>
+int sum(int num);
+int main()
+{
+    int num;
+    printf("Enter the number of natural numbers = ");
+    scanf("%d", &num);
+
+    printf("The sum of first n Natural numbers is %d.", sum(num));
+    return 0;
+}
+int sum(int n)
+{
+    if (n != 0)
+        return n + sum(n - 1);
+
+    else
+        return n;
+}
+------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int cube(int);
+int main()
+{
+    int n;
+    printf("Enter the number : ");
+    scanf("%d", &n);
+    printf("The sum of cubes is = %d",cube(n));
+    return 0;
+}
+int cube(int num)
+{
+    if (num == 1)
+        return (1);
+    else
+    return(num*num*num + cube(num-1));    
+}
+------------------------------------------------------------------------------------
+//Fibionacci series using c
+#include<stdio.h>
+int fib(int);
+int main()
+{
+    int T, cout,f;
+    printf("Enter the number of terms to print on fibionacci series : ");
+    scanf("%d",&T);
+
+    for(cout =1 ; cout < T; cout++)
+    {
+        f= fib(cout);
+        printf("%d ",f);
+    }
+}
+int fib(int t)
+{
+    int f;
+    if(t==1 || t==0)
+    return t;
+    f = fib(t-1) + fib(t-2);
+    return f;
+}
+---------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

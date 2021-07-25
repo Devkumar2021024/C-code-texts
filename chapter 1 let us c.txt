@@ -1,0 +1,175 @@
+jj/*28/4/2021, Dev kumar*/
+// To find gross salary
+#include<stdio.h>
+#include<math.h>
+int main()
+{ 
+float Gross, sal, Dear, Rent;
+printf("Enter the salary = ");
+scanf("%f", &sal);
+
+Rent = sal*040/100; Dear=sal*20/100; /*Operator presedence*/
+Gross  = Rent + Dear + sal;
+
+printf(" The value is %f", Gross);
+return 0;
+}
+
+--------------------------------------------------------------------
+
+/*Conversion using operators*/
+#include <stdio.h>
+int main()
+{
+    float Dkm, Dm, Dcm, Dfeet, Dinches; /*Distance is in Km*/
+    printf("Enter is value od D in Km =\n");
+    scanf("%f", &Dkm);
+    Dm = Dkm * 1000;
+    printf("\nThe value of D in meters = %f", Dm);
+
+    Dcm = Dkm * 100000;
+    printf("\nThe value of D in centememters = %f", Dcm);
+
+    Dinches = Dkm * 39370.1;
+    printf("\nThe value of D in inches = %f", Dinches);
+
+    Dfeet = Dkm * 3280.84;
+    printf("\nThe value of D in feet = %f", Dfeet);
+    return 0;
+}
+
+--------------------------------------------------------------------
+
+/*Code to find percentage of student based of his marks out of 1000.*/
+#include <stdio.h>
+int main()
+{
+    float Total, Percentage, Phy, Chem, maths, Eng, IT;
+    printf("Marks obtained in Physics = \n");
+    scanf("%f", &Phy);
+    printf("Marks obtained in Chemistry = \n");
+    scanf("%f", &Chem);
+    printf("Marks obtained in Maths = \n");
+    scanf("%f", &maths);
+    printf("Marks obtained in English = \n");
+    scanf("%f", &Eng);
+    printf("Marks obtained in It = \n");
+    scanf("%f", &IT);
+
+    Total = Phy + Chem + Eng + IT + maths;
+    printf("\nTotal marks obtained by student is = %f", Total);
+
+    Percentage = Total * 0.2;
+    printf("\nPercentage obtained by the student is = %f", Percentage);
+    return 0;
+}
+
+-----------------------------------------------------------------
+// Intercahnaging the value of two numbers.
+#include <stdio.h>
+int main()
+{
+    int A, C, D;
+    printf("Enter the value of C =");
+    scanf("%d", &C);
+    printf("Enter the value of D =");
+    scanf("%d", &D);
+
+    A = C; // asign 1st variable to A
+    C = D; // assign 1st var to 2nd var
+    D = A; // assign A(which is being assigned as 1st var) to 2nd var
+
+    printf("\nEnter the value of C = %d", C);
+    printf("\nEnter the value of D = %d", D);
+    return 0;
+}
+
+--------------------------------------------------------
+// vvv  imp.
+// Sum of individual digits of a five digit number.
+#include <stdio.h>
+int main()
+{
+    int A, sum;
+    // example a %- digit number is A. we have to gradually do its modulus operator with 10.
+    printf("Enter the five digit number :");
+    scanf("%d", &A);
+
+    sum = A % 10 + (A / 10) % 10 + (A / 100) % 10 + (A / 1000) % 10 + (A / 10000) % 10;
+
+    printf("Sum of all the digits of five digit numbers is %d", sum);
+
+    return 0;
+}
+
+/*EXPLAINATION=
+ ex -98671 
+ 1st. When we apply modulus operator 10 we get remainder 1
+ 2nd. After dividing it by 10 and again applying modulus operator.
+ 3rd. Repeat 2nd step subsequently but inc. value of zeros in 10 which is being divided modulus operator(with %10)
+ 4rth. Repest above steps upto the no. of numbers in the digit (Eg. 6 steps of sux digit numbers)
+ LAST STEP = Add all the numvers.!!!!!!!!!!*/
+
+-----------------------------------------------------------------------------------
+
+// program to reverse orders numbers in a five digit number
+#include <stdio.h>
+int main()
+{
+    int A, B, C, D, E, F;
+    printf("Enter the five digit number =");
+    scanf("%d", &A);
+// Same conecpt is used as used in sum of 5 gigits in a number.
+    B = A % 10;
+    C = (A / 10) % 10;
+    D = (A / 100) % 10;
+    E = (A / 1000) % 10;
+    F = (A / 10000) % 10;
+
+    printf("%d", B);
+    printf("%d", C);
+    printf("%d", D);
+    printf("%d", E);
+    printf("%d", F);
+    return 0;
+}
+--------------------------------------------------------------------------------
+// Obtain sum of 1st and last digit of a four digit number.
+#include <stdio.h>
+int main()
+{
+  int A, sum;
+  printf("Enter the four digit number =");
+  scanf("%d", &A);
+// Same concept used but very important Questions.
+  sum = A%10 + (A/1000)%10;
+
+  printf("\nThe sum of 1st and last number is = %d", sum);
+  return 0;
+
+}
+-------------------------------------------------------------------------------------------
+
+// Example if we have a number 12334. write a program to add one to each of its digits. 23445
+#include<stdio.h>
+int main()
+{
+    int A, a,b,c,d,e;
+    printf("Enter the five digit number =");
+    scanf("%d",&A);
+
+a=A%10+1;
+b=(A/10)%10+1;
+c=(A/100)%10+1;
+d=(A/1000)%10+1;
+e=(A/10000)%10+1;
+
+printf("%d", e);
+printf("%d", d);
+printf("%d", c);
+printf("%d", b);
+printf("%d", a);
+
+
+return 0;
+}

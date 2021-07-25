@@ -1,0 +1,141 @@
+//  Print a factorial of a number.
+#include <stdio.h>
+int main()
+{
+    int num, i;
+    unsigned long int fact;
+    
+    
+    printf("Enter the number =");
+    scanf("%d", &num);
+
+   
+    fact = 1;
+    while (num >= 1)
+    {
+        fact = fact * num;
+        num=num-1;
+        printf("%d\n", fact);
+    }
+    printf("The factorial is %d. ", fact);
+    return 0;
+}
+-------------------------------------------------------------------------
+//Program to find power of numbers using while loop,
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int n1, n2, pow;
+    pow = 1;
+    printf("Enter the numebr 1 = ");
+    scanf("%d", &n1);
+    printf("Enter the numebr 2 = ");
+    scanf("%d", &n2);
+
+    while (n2 >= 1)
+    {
+        pow = pow * n1;  //It is not important that iterating variable always paticipates in the loop.
+        n2--;
+    }
+    printf("The required number is = %d", pow);
+    return 0;
+}
+----------------------------------------------------------------------
+//find GCD or HCF
+//Problem to find GCD of two numbers.
+#include <stdio.h>
+int main()
+{
+    int a, b, n;
+    printf("Enter the two numbers =");
+    scanf("%d\n%d\n", &a, &b);
+
+    if (a < b)
+        n = a;
+    else
+        n = b;
+
+    //We have to take smaller value of a between a and b.
+    for (n; n >= 1; n--)
+        if ((a % n == 0) && (b % n == 0))
+            break;
+
+    printf("GCD or HCF is = %d", n);
+
+    return 0;
+}
+-----------------------------------------------------------------------------------
+//Problem to find armstrong numbers
+#include <stdio.h>
+int main()
+{
+    int a, s, x, n;
+    printf("The armstrong numbers are = \n");
+    for (n = 1; n <= 1000; n++)
+    {
+        s = 0; x = n;
+        while (x != 0)
+        {
+            a = x % 10;
+            s = s + a * a * a;
+            x = x / 10;
+        }
+        if (s == n)
+            printf("%d\n", n);
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------
+/*Write a program to find sum of first ten integers of following
+
+   x - 1/x = 1/2*(x-1/x)^2 + --------------------*/
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+
+    float x, sum = 0;
+    int i;
+    printf("Enter the value of x =");
+    scanf("%f", &x);
+
+    for (i = 1; i <= 7; i++)
+    {
+        if (i == 1)
+            sum = sum + (x - 1) / x;
+        else
+            sum = sum + (1.0 / 2) * pow((x - 1) / x, i);
+    }
+    printf("\nlog(%f) = %f\n", x, sum);
+    return 0;
+}
+---------------------------------------------------------------------------------------------
+// Program to print all prime factors
+#include <stdio.h>
+#include <math.h>
+void prime (int);
+int main()
+{
+    int num;
+    printf("Enter the number : ");
+    scanf("%d", &num);
+    prime(num);
+    return 0;
+}
+void prime(int n)
+{
+    int i;
+    for (i = 2; n > 1; i++)
+    {
+        while (n % i == 0)
+        {
+            printf("%d\n", i);
+            n = n / i;
+        }
+    }
+    
+}
+
+------------------------------------------------------------------------------------------------------

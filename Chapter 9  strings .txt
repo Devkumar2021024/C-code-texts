@@ -1,0 +1,278 @@
+
+ID: Z11620
+Password: glass84
+-------------------// Strings
+#include<stdio.h>
+int main()
+{
+  //  char s[] = {'D', 'E', 'V', '\0'};
+    char s[] = "Devkumar";   //Same , but convinient , SHOTCUT.
+    printf("%s", s);
+    return 0;
+}
+--------------------------------------------------------------------------
+#include <stdio.h>
+// String using loops.
+#include <string.h>
+int main()
+{
+    char str[] = "DevKumar";
+    char *ptr = str;
+    do
+    {
+        printf("%c \n", *ptr);
+        ptr++;
+    } while (*ptr != '\0');
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------
+//Taking string input from the user.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[67];
+    printf("Enter your name = ");
+    scanf("%s", s);
+
+    printf("Your name is  %s.", s);
+    return 0;
+}
+-----------------------------------------------------------------
+#include <stdio.h>
+// String using loops.
+#include <string.h>
+int main()
+{
+    int num;
+    char s[67];
+
+    printf("Enter the user name = ");
+    gets(s);
+    printf("Id no. : ");
+    scanf("%d", &num);
+
+    printf("The name of perticipant is %s. \n", s);
+    printf("Id no = %d",num);
+    return 0;
+}
+------------------------------------------------------------------------------------------
+#include <stdio.h>
+// String using loops.
+#include <string.h>
+int main()
+{
+
+    char s[67];
+
+    printf("Enter the user name = ");
+    gets(s);  // Store multiple strings.
+    puts(s);  // Prints multiple strings but places the cursor in the next line.
+  
+    printf("The name of perticipant is %s. \n", s);
+   
+    return 0;
+}
+------------------------------------------------------------------------------------
+/*Write a Program to calculate length of the string using strlen() function*/
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+int main()
+{
+    char s[20];
+    int l;
+    printf("Enter your name = ");
+    gets(s);
+    l = strlen(s);
+    printf("Length of the string %s is = %d .\n", s, l);
+    return 0;
+}
+------------------------------------------------------------------------------------------------
+/*Write a program to reverse a string using strrev() function */
+#include <stdio.h>
+#include <string.h>
+#include<strings.h>
+#include<conio.h>
+int main()
+{
+    char st[20];
+    printf("Enter your school name = \n");
+    gets(st);
+    strrev(st);
+    printf("Reversed string = %s .", st);
+    getch();
+    return 0;
+}
+----------------------------------------------------------------------------
+/*Write a program to transform a string into its upper case. */
+#include <stdio.h>
+int main()
+{
+    char string[30];
+    int i, l;
+    printf("Enter the string  = \n");
+    gets(string);
+
+    for (i = 0; string[i] != '\0'; i++)
+    {
+        if ('a' <= string[i] && string[i] <= 'z')
+        {
+            string[i] = string[i] - 32;
+        }
+    }
+    /*Output*/
+    printf("Output = %s", string);
+    return 0;
+}
+-----------------------------------------------------------------------
+/* This program would sort the input strings in
+ * an ascending order and would display the same
+ */
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i, j, count;
+    char str[25][25], temp[25];
+    puts("How many strings u are going to enter?: ");
+    scanf("%d", &count);
+
+    puts("Enter Strings one by one: ");
+    for (i = 0; i <= count; i++)
+        gets(str[i]);
+    for (i = 0; i <= count; i++)
+        for (j = i + 1; j <= count; j++)
+        {
+            if (strcmp(str[i], str[j]) > 0)
+            {
+                strcpy(temp, str[i]);
+                strcpy(str[i], str[j]);
+                strcpy(str[j], temp);
+            }
+        }
+    printf("Order of Sorted Strings:");
+    for (i = 0; i <= count; i++)
+        puts(str[i]);
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------
+/*Check weather a string is a pallinderome,   dEd --- Rev ded*/
+#include<stdio.h>
+#include <string.h>
+ 
+int main()
+{
+    char s[1000];  
+    int i,n,c=0;
+ 
+    printf("Enter  the string : ");
+    gets(s);
+    n=strlen(s);
+ 
+    for(i=0;i<n/2;i++)  
+    {
+    	if(s[i]==s[n-i-1])
+    	c++;
+ 	}
+ 	if(c==i)
+ 	    printf("string is palindrome");
+    else
+        printf("string is not palindrome");
+ 
+ 	 
+     
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+// Copy a string using strcpy() function.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+     char dev[] = "Dev kumar";
+     char copy[20];
+     strcpy(copy, dev);
+     printf("Source string = %s\n", dev);
+     printf("Copied string = %s", copy);
+     return 0;
+}
+---------------------------------------------------------------------
+// Copy a string using strcpy() function.
+#include <stdio.h>
+#include <string.h>
+void xstrcpy(char* ,char*);
+int main()
+{
+     char dev[] = "Dev kumar";
+     char copy[20];
+     xstrcpy(copy, dev);
+     printf("Source string = %s\n", dev);
+     printf("Copied string = %s", copy);
+     return 0;
+}
+void xstrcpy(char *copy, char *dev)
+{
+     while (*dev != '\0')
+     {
+          *copy = *dev;
+          dev++;
+          copy++;
+     }
+      *copy = '\0';
+}
+------------------------------------------------------------------------
+// Use of strcat() function
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+     char s[] = " World!";
+     char t[] = "Hello";
+     strcat(t, s);   // This function basically copies chararcters of one strig to other.  Here s ---> t
+     printf("Initial string = %s\n", s);
+     printf("Target string = %s\n", t);
+     return 0;
+}
+-----------------------------------------------------------------------------------
+
+
+
+                       +++++++++++  2-D STRINGS ++++++++++++++++++
+//Find your name ina list
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+     char list[25][25] = {
+         "Dev",
+         "Shyam",
+         "Abhishek",
+         "Chandan",
+         "Dhruv"};
+     char name[10];
+     int i, j, k;
+     printf("Enter your name = ");
+     scanf("%s", name); // String therefore & is not used.
+
+     j = 0; //Notfound
+     for (i = 0; i <= 5; i++)
+     {
+          k = strcasecmp(&list[i][0], name);
+          if (k == 0)
+          {
+               printf("Welcome your name is in the list.");
+               j = 1;
+               break;
+          }
+     }
+     if (j == 0)
+     {
+          printf("Sorry, your name is not in the list, Try again !");
+     }
+     return 0;
+}
+----------------------------------------------------------------------------------------------------------------------

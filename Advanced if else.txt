@@ -1,0 +1,144 @@
+/*Acc. to a gorgian calender on 1/01/01 it is monday. write a program to find day on 1 date of other year whose value is put in input.*/
+#include <stdio.h>
+int main()
+{
+  int year, total_days, Leap_years, remaining_year, day,basic_year=1900;
+  //  initialise the basic year from which you are starting.
+  printf("Enter the year and basic_year=");
+  scanf("%d", &year);
+  /*Number of years between entered value and basic_year*/
+  year = (year - 1)-basic_year; // -1 bcoz we are starting our counting after 1900
+  // no of leap years comming in between
+  Leap_years = year / 4;
+  //Number of years left after excluding leap year.
+  remaining_year = year - Leap_years;
+  //total no. of days.
+  //we added here 1 bcoz we are counting after 1/01/1900. adding 1 will include 1st jan of 1900 also.
+  total_days = (remaining_year * 365) + (Leap_years * 366) +1 ;
+  //No of days in a week =7. Now 1st day
+  day = total_days % 7;
+
+  if (day == 0) // bcoz 1st day starts with monday.
+    printf("Monday");
+  else if (day == 1)
+    printf("Tuesday");
+  else if (day == 2)
+    printf("Wednesday");
+  else if (day == 3)
+    printf("Thrusday");
+  else if (day == 4)
+    printf("Friday");
+  else if (day == 5)
+    printf("Saturday");
+  else if (day == 6)
+    printf("Sunday");
+  else
+  {
+    printf("ERROR!!!");
+  }
+
+  return 0;
+}
+------------------------------------------------------------------------------------------------------------
+//check weather given point is inside or outsude the circle
+// In this Question we have to input radius of circle, poinx,y at centre point a,b.
+// Use of sqrt and pow functions.
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  float a, b, x, y, r, d; /*(a,b) are centre opints and (x,y) are points to be entered.*/
+  printf("Enter the value of point a =");
+  scanf("%d", &a);
+  printf("Enter the value of point b =");
+  scanf("%d", &b);
+  printf("Enter the value of point x =");
+  scanf("%d", &x);
+  printf("Enter the value of point y =");
+  scanf("%d", &y);
+  printf("Enter the value of radsius of the circle =");
+  scanf("%d", &r);
+  // Using formula for distance between two points = ((x2-x1)^2-(y2-y1)^2)^1/2
+
+  d = pow(0.50, sqrt(x - a) - sqrt(y - b));
+  if (d >= r)
+  {
+    printf("Point is inside the circle. \n");
+  }
+  else
+  {
+    printf("Point is outside the circle. \n");
+  }
+
+  return 0;
+}
+------------------------------------------------------------------------------------------
+//check weather a  triangle is isosles, right , equilaeral, scalene
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int H, P, B, a, b;
+  printf("Enter the value of side1 =");
+  scanf("%d", &H);
+  printf("Enter the value of side2 =");
+  scanf("%d", &P);
+  printf("Enter the value of side3 =");
+  scanf("%d", &B);
+
+  if ((H == P) && (P == B) && (B == P))
+    printf("The triangle is equilateral.");
+
+  else if ((H == P) || (H == B) )
+    printf("The triangle is isosles.");
+
+  else if (H*H == P*P + B*B)
+    printf("The triangle is right angled triangle.");
+
+  else if ((H != P) && (H != P) && (P != B))
+    printf("The triangle is scalene.");
+
+  return 0;
+}
+-------------------------------------------------------------------------------
+//Programm to find roots of Equations quadric roots ax^2 + Bx + c= 0
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	float a, b, c, D;
+
+	printf("Enter the value of a = ");
+	scanf("%f", &a);
+	printf("\nEnter the value of b = ");
+	scanf("%f", &b);
+	printf("\nEnter the value of c = ");
+	scanf("%f", &c);
+
+	D = (b * b - 4 * a * c); // Discriminant
+	printf("Enter the value of D\n %f", D);
+
+	if (D > 0)
+	{
+		printf("The roots are real.\n");
+		printf("The roots are %f\n ", ((-b + D) / (2 * a)));
+		printf("The roots are %f\n  ", ((-b - D) / (2 * a)));
+	}
+	else if (D == 0)
+	{
+		printf("Roots are equal. \n");
+		printf("The roots are %f. ", ((-b + D) / (2 * a)));
+	}
+	else if(D < 0)
+	{
+
+		printf("Roots are imaginary.\n");
+		printf("Complex roots = ");
+		printf("Real part is %f\n", -b / 2 * a);
+		printf("Imaginary part - i%f\n", D / 2 * a);
+		printf("Imaginary part  + i%f\n", D / 2 * a);
+	}
+	return 0;
+}
+---------------------------------------------------------------------------------------

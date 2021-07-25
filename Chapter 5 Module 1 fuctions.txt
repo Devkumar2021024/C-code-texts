@@ -1,0 +1,308 @@
+// Functions in c.
+#include <stdlib.h>
+#include <stdio.h>
+void dev();
+void India();
+void iit();
+int main()
+{
+
+     printf("Code written with the help of declaring fumctions .\n");
+     dev();
+     printf("More introduction to me.\n");
+     India();
+     printf("I am preparing for gate exam.\n");
+     iit();
+     return 0;
+}
+void dev()
+{
+     printf("I study in GNDEC.\n");
+     India();
+     printf("I am back guys.\n");
+}
+
+void India()
+{
+     printf("Welcome to India. \n");
+     iit();
+}
+void iit()
+{
+     printf("I want to go to IIT.\n");
+}
+
+----------------------------------------------------------------------------
+//Takes something return something.  CALL BY VALUE 
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void add(int, int);  //Function takes something(int, int). void returns nothing. GLOBAL DECLARATION
+int main()
+{
+    int x, y;
+
+    printf("Enter two numbers : ");
+    scanf("%d\n%d", &x, &y);  // value of x and y is being passed in a and b.
+
+    add(x,y); //Actual arguements, they will be replaced by integers a and b.
+}
+void add(int a, int b) //Define of the function. Formal arguements
+{
+    int sum;
+    sum = a + b;
+    printf("The sum is = %d", sum);
+}
+--------------------------------------------------------------------------------------------------------
+//Using libraray functions.
+#include <stdio.h>
+#include<math.h>  // math.h is a library function which is used for mathematical calculations.
+int main()
+{
+     float A = 45;
+     float a, b, c, d;
+
+     a = cos(A);
+     b = sin(A);
+     c = tan(A);
+     d = pow(A, 0.5);
+
+     printf("%f\n%f\n%f\n%f\n", a, b, c, d);
+     return 0;
+}
+-----------------------------------------------------------------------------
+//Takes nothing retuens nothing function
+#include <stdio.h>
+#include <conio.h>
+void add(); //When function takes nothing then void comes with the function.
+int main()
+{
+    clrscr();
+    void add(void); // function call.  function return nothing and takes nothing.
+/*     void add(void);
+        |     |     |
+ return   user def.  value which
+value of  function    function takes.
+function   
+*/
+
+    getch();
+}
+
+void add() //Define of the function.
+{
+    int x, y, sum;
+    printf("Enter two numbers : ");
+    scanf("%d\n%d\n", &x, &y);
+
+    sum = x + y;
+    printf("The sum is = %d", sum);
+}
+-----------------------------------------------------------------------------------
+//Takes nothing return something.
+#include <stdlib.h>
+#include <stdio.h>
+int add();
+int main()
+{
+    int var;
+    var = add(); // Value of c will return to add.
+    printf("The sum will be = %d .", var);
+    return 0;
+}
+int add()
+{
+    int a, b, c;
+    printf("Enter two numbers : ");
+    scanf("%d\n%d", &a, &b);
+
+    c = a + b;
+    return (c);  // c is integer so will we will write int add().
+}
+-------------------------------------------------------------------------------------------------
+//Takes something return something.
+#include <stdlib.h>
+#include <stdio.h>
+int add(int, int);
+int main()
+{
+  int a,b,c;
+  printf("Emter two numbers : ");
+  scanf("%d\n%d", &a, &b);
+
+  c = add(a,b);
+  printf("The sum is = %d",c);
+}
+int add(int x, int y)
+{
+    int cum;
+    cum = x + y;
+    return (cum);  // c is integer so will we will write int add().
+}
+-----------------------------------------------------------------------------
+//A number is entered through keyboard write sum of squares of first n numbers.
+#include <stdio.h>
+int sum(int);  //TSRS
+int main()
+{
+    int num, s;
+    printf("Enter the number = ");
+    scanf("%d",&num);
+    sum(num);
+    s = sum(num);
+    printf("The sum of squares of 1st n natural numbers is = %d", s);
+    return 0;
+
+
+}
+int sum(int n)
+{
+    int cout, c =0;
+    for(cout = 1; cout<=n; cout++)
+    {
+        c = c + (cout*cout);
+    }
+    return (c);
+}
+----------------------------------------------------------------------------------------------
+//Print a pascal triangle in c.
+#include <stdio.h>
+int fact(int);        //Factorail
+int comb(int, int);   // Combination
+void printPascal(int); //Pascal
+
+int fact(int num)
+{
+    int fact = 1, cout;
+    for (cout = num; cout >= 1; cout--)
+    {
+        fact = fact * cout;
+    }
+    return (fact);
+}
+
+int comb(int num, int r)
+{
+    return (fact(num) / fact(num - r)/ fact(r));
+}
+void printPascal(int line)
+{
+    int i, j, k, r;
+    for (i = 1; i <= line; i++)
+    {
+        k = 1;
+        r = 0;
+        for (j = 1; j <= 2*line -1 ; j++)
+        {
+            if (j >= (line +1) - i && j <= (line-1) + i && k)
+            {
+                printf("%d", comb(i-1, r));
+                k = 0; r++;
+            }
+            else
+               { printf(" ");
+                k = 1;
+               }
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    printPascal(5);
+}
+---------------------------------------------------------------------------------------------------------------
+//Raise the power using functions.
+#include <stdio.h>
+int power(int, int);
+int main()
+{
+    int n1, n2, c;
+    printf("Enter the base number : ");
+    scanf("%d", &n1);
+    printf("Enter the number to which power is to be raised : ");
+    scanf("%d", &n2);
+
+    c = power(n1, n2);
+    printf("Result is = %d .", c);
+    return 0;
+}
+int power(int a, int b)
+{
+    int cout, p = 1;
+    for (cout = 1; cout <= b; cout++)
+    {
+        p = p * a;
+    }
+    return (p);
+}
+-----------------------------------------------
+//Program using functions to find average of three numbers.
+#include <stdio.h>
+int avg(int, int, int);
+int main()
+{
+    int a, b, c, d;
+    printf("ENter the first number : ");
+    scanf("%d", &a);
+    printf("ENter the second number : ");
+    scanf("%d", &b);
+    printf("ENter the third number : ");
+    scanf("%d", &c);
+
+    d = avg(a, b, c);
+    printf("The average of three numbers is = %d", d);
+    return 0;
+}
+int avg(int a, int b, int c)
+{
+    int A;
+    A = (a + b + c) / 3;
+    return A;
+}
+=-------------------------------------------------------------------------------------------------------
+//Program convert celcius into temperature.
+#include <stdio.h>
+float Temp(float);
+int main()
+{
+    float cel;
+    printf("Enter the value in celcius = ");
+    scanf("%f", &cel);
+
+    printf("The tempearture in fahrenheit is = %f", Temp(cel));
+    return 0;
+}
+float Temp(float cel)
+{
+    int F;
+    F = (((9 / 5) * cel) + 32);
+    return (F);
+}
+--------------------------------------------------------------------------------------------
+// Fibionacci series using functions.
+#include <stdio.h>
+void fib(int);
+int main()
+{
+    int x;
+    printf("Enter the number of terms you want to print : ");
+    scanf("%d", &x);
+
+    fib(x);
+}
+void fib(int x)
+{
+    int a, b, c, i;
+    a = -1;
+    b = 1;
+    for (i = 1; i <= x; i++)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+
+        printf("%d ", c);
+    }
+}
+------------------------------------------------------------------------------------------------------------

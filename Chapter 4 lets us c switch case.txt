@@ -1,0 +1,232 @@
+// Switch case statement
+#include <stdio.h>
+int main()
+{
+    int num;
+
+    printf("Enter the number = ");
+    scanf("%d", &num);
+
+    switch (num)
+    {
+    case 12:
+        printf("yes\n.");
+        break;
+    case 2:
+        printf("yes\n.");
+        break;
+
+    case 312:
+        printf("yes\n.");
+        break;
+
+    case 132:
+        printf("No\n.");
+        break;
+
+    default:
+        printf("No number");
+    }
+}
+-------------------------------------------------------------
+//Switch case in chracters
+#include <stdio.h>
+int main()
+{
+    char a;
+    printf("Enter your favourite vowel = ");
+    scanf("%s", &a);
+
+    switch (a)
+    {
+    case 'a':
+    case 'A':
+        printf("Apple. \n");
+        break;
+
+    case 'e':
+    case 'E':
+        printf("Elephant. \n");
+        break;
+
+    case 'i':
+    case 'I':
+        printf("Igloo. \n");
+        break;
+
+    case 'o':
+    case 'O':
+        printf("Orange. \n");
+        break;
+
+    case 'u':
+        printf("U,brella. \n");
+        break;
+
+    default:
+        printf("You are not in my list.");
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------------------------
+//Goto keyword = helps to go to any statement
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int num;
+    printf("Enter the number - ");
+    scanf("%d", &num);
+
+    if (num < 5)
+        goto dev;
+
+dev:
+    printf("Number less than five.");
+    return 0;
+}
+-----------------------------------------------------------------
+//Go out statement
+#include <stdio.h>
+int main()
+{
+    int i, j, k;
+
+    for (i = 1; i <= 3; i++)
+    {
+        for (j = 1; j <= 3; j++)
+        {
+            for (k = 1; k <= 3; k++)
+            {
+                if (i == 3 && j == 2 && k == 1)
+                    goto out;
+                else
+                    printf("%d %d %d\n", i, j, k);
+            }
+        }
+    }
+out:
+    printf("Out of the loop at last. \n");
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+// find factorial, check prime or not, odd or even and exit
+#include <math.h>
+#include <stdio.h>
+int main()
+{
+    int num, cout, i;
+
+    long unsigned int fact = 1;
+    char ch;
+
+    printf("Enter the operator (!, p, o) : ");
+    scanf("%s", &ch);
+
+    switch (ch) //Most important step
+    {
+    case '!':
+        printf("Enter the number  : ");
+        scanf("%d", &num);
+        for (cout = num; cout >= 1; cout--)
+        {
+            fact = fact * cout;
+        }
+        printf("Factorial is %d. ", fact);
+
+        break;
+    case 'p':
+        printf("Enter the number  : ");
+        scanf("%d", &num);
+
+        for (i = 2; i <= num; i++)
+        {
+            if (num == 1)
+            {
+                printf("one is neither prime nor composite . \n");
+                break;
+            }
+
+            else if (num % i == 0)
+            {
+                printf("The number is not prime. \n");
+                break;
+            }
+
+            else
+            {
+                printf("The number is prime number. \n");
+                break;
+            }
+        }
+        break;
+
+    case 'o':
+        printf("Enter the number  : ");
+        scanf("%d", &num);
+
+        if (num % 2 == 0)
+            printf("Number is even. ");
+
+        else
+            printf("Number is odd.");
+        break;
+
+    default:
+        printf("Wrong operator ");
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+// Let us c page 146. last question
+#include <stdio.h>
+int main()
+{
+    int class, sub;
+    printf("Enter the class obtained and the subjects he has failed : ");
+    scanf("%d\n%d", &class, &sub);
+
+    switch (class)
+
+   { case 1:
+
+        if (sub <= 3)
+        {
+            printf("The grace marks will be %d", 5*sub);
+            break;
+        }
+        else
+        {
+            printf("No grace marks obtained.");
+            break;
+        }
+
+     case 2:
+        if (sub <= 2)
+        {
+            printf("The grace marks will be %d", 2*sub);
+            break;
+        }
+        else
+        {
+            printf("No grace marks obtained.");
+            break;
+        }  
+
+     case 3:
+
+        if (sub <= 1)
+        {
+            printf("The grace marks will be %d", 5*sub);
+            break;
+        }
+        else
+        {
+            printf("No grace marks obtained.");
+            break;
+        } 
+   } 
+        return 0; 
+}
+--------------------------------------------------------------------------------------
+

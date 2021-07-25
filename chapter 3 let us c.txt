@@ -1,0 +1,310 @@
+//Best example of while loop.
+#include <stdio.h>
+int main()
+{
+    int num, sum, cout;
+    //initialise the counter.initialisation is must otherwise loop will not execute.
+    num = 0;
+    sum = 0;
+    cout = 0;
+    while (cout <= num) //Note that when this condition becomes false loop will end.
+    {
+        printf("Enter the number = ");
+        scanf("%d", &num);
+
+        sum = sum + num;
+
+        cout++;
+        printf("Value of sum per step is %d. \n ", sum); // This shows step-wise sum when we enter the numbers.
+    }
+    printf("Total sum is %d. ", sum); // overall sum.
+
+    return 0;
+}
+-------------------------------------------------------------------------------
+//ABOVE QUESTION WITH THE HELP OF FOR LOOP
+/*FOR loop formaty
+     for(initialise the condition; test thew counter; increment operator)
+      {
+         do this; 
+         and this;
+         and this
+}*/
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+
+    float r, si, p, t;
+    int i;
+
+    for (i = 1; i <= 6; i = i + 1)
+    {
+        printf("\nEnter the value of p,r,t =");
+        scanf("%f\n%f\n%f", &p, &r, &t);
+
+        si = p * r * t / 100;
+        printf("simple interest = Rs%f", si);
+    }
+    return 0;
+}
+//NOTE= always write return 0; out of the loop. If we does not do so the loop will not execute repetedly.
+---------------------------------------------------------------------------------------------------------
+// PRINTING A PRIME NUMBER
+#include <stdio.h>
+int main()
+{
+    int num, cout;
+    printf("Enter the number =");
+    scanf("%d", &num);
+
+    if (num == 1)
+    {
+        printf("One is neither prime nor composite. \n");
+    }
+    for (cout = 2; cout < num; cout++)
+    {
+        if (num % cout == 0){
+            printf("Number is not prime. \n");
+            break;
+        }
+        else
+        {
+            printf("The number is a prime number\n");
+            break;
+        }
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int i=0, j=0;
+    
+    while (i++ < 10)
+    {
+        while (j++ < 300)
+        {
+            if (j > 200)
+            {
+                break;
+            }
+            else
+                printf("i= %d, j= %d\n", i, j);
+        }
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+// code to calculate overtime pay cond. here is to get overtime pay you have to work more than 40 hrs and ovtp id R12p/h. and there a 10 employees.
+#include <stdio.h>
+int main()
+{
+    float ovtp;
+    int hours;
+    int i = 1; //initial condition
+
+    printf("Enter the number of hours worked =");
+    scanf("%d", &hours);
+
+    while (i <= 10)
+    {
+        if (hours >= 40)
+        {
+            ovtp = (hours - 40) * 12;
+            printf("Your overtime pay is %f\n", ovtp);
+        }
+        else
+        {
+            ovtp = 0;
+            printf("You have worked only %d hours.\n So, you are getting no overtime pay.\n", hours);
+        }
+        i++; //Increment operator.
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------
+//Above Question in do-while loop.
+#include <stdio.h>
+int main()
+{
+    int num, sum, cout;
+    sum = 0;
+    cout = 0;
+    do
+    {
+        printf("Enter the number = ");
+        scanf("%d", &num);
+
+        sum = sum + num;
+        printf("value of sum after every step = %d\n", sum);
+        cout++;
+    } while (cout <= num);
+    printf("Total value of the sum = %d", sum);
+    return 0;
+}
+--------------------------------------------------------------
+//Above Question in do-while loop.
+#include <stdio.h>
+int main()
+{
+    char another;
+    int sum;
+    do
+    {
+        printf("Enter the value of the number = ");
+        scanf("%d", &sum);
+        printf("Square of %d is %d .\n", sum, sum * sum);
+        printf("Want to enter another number y/n.");
+        scanf("%s",&another);
+    }while (another == 'y');
+
+    return 0;
+}
+---------------------------------------
+// Find the sum of digits of number.
+#include <stdio.h>
+int main()
+{
+    int num, sum;
+    sum = 0;
+    num = 0;
+    printf("Enter the number = ");
+    scanf("%d", &num);
+
+    while (num != 0)
+    {
+        sum = sum + (num % 10);
+        num = num / 10;
+    }
+
+    printf("Sum of the digits = %d\n", sum);
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+//Program to write ascii values of char
+#include <stdio.h>
+int main()
+{
+
+    int cout;
+
+    cout = 0;
+    while (cout <= 255)
+    {
+        printf("ASCII value of %c is %d.\n", cout, cout);
+        cout++;
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------
+//Program to print table of a number upto given point.
+#include <stdio.h>
+int main()
+{
+    int b, i;
+    float a;
+
+    printf("enter the number of a  =");
+    scanf("%f", &a);
+
+    printf("Enter the number of times =");
+    scanf("%d", &b);
+     i =1;
+    while (i <= b)
+    {
+        printf("%f * %d = %f\n", a, i, a * i);
+        i++;
+    }
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+//Print all prime numbers between 1 to 300.
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int num, cout, i;
+    printf("Prime numbers between 1-300 is = \n");
+    for (num = 1; num <= 300; num++)
+    {
+        for(cout=2; cout < num; cout++)
+        {
+             if(num%cout != 0)
+             printf("%d\n",num);
+             break;
+        }
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------
+//Q k. pg125 let us C
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int p, n, q, cout;
+    float a, r, m;
+        
+    a = (p + pow((1 + (r / q)), n * q));
+    m =a;
+    for (cout = 1; cout <= 10; cout++)
+    {
+        printf("Enter the value of p = ");
+        scanf("%d", &p);
+        printf("Enter the value of r = ");
+        scanf("%f", &r);
+        printf("Enter the value of n = ");
+        scanf("%d", &n);
+        printf("Enter the value of q = ");
+        scanf("%d", &q);
+      
+      a = (p + pow((1 + (r / q)), n * q));
+       
+        printf("%f\n", a);
+    
+    }
+    
+    return 0;
+}
+------------------------------------------------------------------------------------------
+//Qi page 125
+#include <stdio.h>
+int main()
+{
+    float i, x;
+    int y;
+    for (y = 1; y <= 6; y++)
+    {
+        for (x = 5.5; x <= 12.5; x++)
+        {
+            i = 2 + (y + (0.5 * x));
+            printf(" i = %f\n", i);
+        }
+    }
+    return 0;
+}
+---------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int cout, a, b, c;
+    printf("Enter the number and table = ");
+    scanf("%d\n%d", &a, &b);
+
+    for (cout = 1; cout <= b; cout++)
+    {
+        a *cout;
+        printf("%d * %d = %d\n", a, cout, a * cout);
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+
+
+
+

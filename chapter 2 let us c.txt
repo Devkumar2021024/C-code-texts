@@ -1,0 +1,408 @@
+/*Ternary operator 
+(expreession 1? expression 2 : expression3);
+if expression 1 is true then print expression 2 else print expression 3.*/
+#include<stdio.h>
+int main()
+{
+    int i;
+    printf("Value of i =");
+    scanf("%d", &i);
+    
+    (i==23?printf("Good guess"):printf("Better luck next time"));
+    return 0;
+
+}
+---------------------------------------------------------------------
+/*Program to determine profit and loss.*/
+#include <stdio.h>
+int main()
+{
+    int Tsp, cost, profit = 0, loss = 0, X;
+    printf("Enter cost and total selling price =");
+    scanf("%d\n%d", &cost, &Tsp);
+
+    X = Tsp - cost;
+    if (X > 0)
+    {
+        printf("Profit =%d", X);
+    }
+    else
+    {
+        printf("Loss =%d", -X);
+    }
+    return 0;
+}
+------------------------------------------------------------------------
+/*Program to determine odd or even number.*/
+#include <stdio.h>
+int main()
+{ int a,b;
+ printf("Enter number :");
+ scanf("%d",&a);
+
+b=a%2;
+if (b == 0)
+{
+    printf("a is even number");
+}
+else
+{
+    printf("a is odd number");
+}
+
+
+ return 0;
+}
+-----------------------------------------------------------------------------
+VVV Vimp.
+/*Program to find leap year.*/
+#include <stdio.h>
+int main() {
+   int year;
+   printf("Enter a year: ");
+   scanf("%d", &year);
+
+   // leap year if perfectly divisible by 400
+   if (year % 400 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   // not a leap year if divisible by 100
+   // but not divisible by 400
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.", year);
+   }
+   // leap year if not divisible by 100
+   // but divisible by 4
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   // all other years are not leap years
+   else {
+      printf("%d is not a leap year.", year);
+   }
+
+   return 0;
+}
+------------------------------------------------------------------------------------
+//a five digit number is entered through kry board. write a programm to reverse and check weather two numbers(Reversed and actual) are same or not.
+#include <stdio.h>
+int main()
+{
+  int N, A, B, C, D, E;
+  printf("Enter the five digit number =");
+  scanf("%d", &N);
+  A = N % 10;
+  B = (N / 10) % 10;
+  C = (N / 100) % 10;
+  D = (N / 1000) % 10;
+  E = (N / 10000) % 10;
+  //Reverse the digits.
+  printf("%d", A);
+  printf("%d", B);
+  printf("%d", C);
+  printf("%d", D);
+  printf("%d", E);
+
+  //Comparing reversed and acutal digits of five digit number.
+  if (A == E && B == D)
+    printf("\nActual and reversed numbers are same.");
+  else
+    printf("\nResversed numbers are not same.");
+  return 0;
+}
+---------------------------------------------------------------------------
+// we have a rectangle. check weather its area and perimeter are same of greater.
+#include <stdio.h>
+int main()
+{
+  int area, Perimeter, L, B;
+  printf("Enter the value of lenglth =");
+  scanf("%d", &L);
+  printf("Enter the value of breadth =");
+  scanf("%d", &B);
+
+  Perimeter = L + B;
+  area = 2 * (L + B);
+  printf("%d\n", area);
+  printf("%d\n", Perimeter);
+  if (area > Perimeter)
+  {
+    printf("\narea is greater than perimeter. ");
+  }
+  else
+  {
+    printf("\narea is lesser than perimeter. ");
+  }
+  return 0;
+}
+------------------------------------------------
+// if statement, discount related question.
+#include <stdio.h>
+int main()
+{
+    float qty, Total, dis = 0, rate;
+    printf("Enter quantity and price per item = ");
+    scanf("%f%f", &qty, &rate);
+
+    if (qty > 1000)
+        ;
+    {
+        dis = 0.10;
+    }
+    Total = (qty * rate) - (qty * rate * dis);
+    printf("The total expences incurred = %f", Total);
+
+    return 0;
+}
+-----------------------------------------------------------------------------------\
+// if -  Else statement question.
+#include<stdio.h>
+int main()
+{
+  float sal, Grsal, HRA, DA;
+  printf("Enter your salary :");
+  scanf("%f", &sal);
+
+  if(sal < 15000){
+      HRA= sal*0.10; //10%
+      DA = sal*0.90; //90%
+  }  
+  else{
+      HRA = 500;
+      DA= 0.98*sal;
+  }
+
+  Grsal= sal+HRA+DA; //Total salary
+  printf("Your geoss sslary is = %f", Grsal);
+return 0;
+
+} 
+--------------------------------------------------------------------------------------------------------\
+// use of logical operators in if-Else statement
+/*Marks obtained by student in five different subjects
+above or equal to 60% 1st div.
+50-59% 2nd div.
+40-49% 3td div.
+less than 40% fail.*/
+#include <stdio.h>
+int main()
+{
+    int s1, s2, s3, s4, s5;
+    float Perct;
+    printf("Enter the marks obtained in subject 1 = ");
+    scanf("%d", &s1);
+    printf("Enter the marks obtained in subject 2 = ");
+    scanf("%d", &s2);
+    printf("Enter the marks obtained in subject 3 = ");
+    scanf("%d", &s3);
+    printf("Enter the marks obtained in subject 4 = ");
+    scanf("%d", &s4);
+    printf("Enter the marks obtained in subject 5 = ");
+    scanf("%d", &s5);
+
+    Perct = (s1 + s2 + s3 + s4 + s5) * 100 / 500;
+    printf(" Your percentage is :%f\n", Perct);
+   
+    if (Perct >= 60)
+    {
+        printf("You have got 1st division. \n");
+    }
+    else
+    {
+        if (Perct >= 50)
+        {
+            printf("You have got 2nd division. \n");
+        }
+        else
+        {
+            if (Perct >= 40)
+                printf("You have got 3rd division. \n");
+            else
+            {
+                printf("You are failed");
+            }
+        }
+    }
+   
+    return 0;
+}
+-------------------------------------------------------------------------------------
+// Method 2=  BY using logical operators and in this question we are only using if statemnt
+#include <stdio.h>
+int main()
+{
+    int Perct, s1, s2, s3, s4, s5;
+    printf(" Enterc your marks obtained in s1, s2, s3, s4, s5 =");
+    scanf("%d%d%d%d%d", &s1, &s2, &s3, &s4, &s5);
+
+    Perct = (s1 + s2 + s3 + s4 + s5) * 100 / 500;
+    if (Perct >= 60)
+    {
+        printf("you got 1st div");
+    }
+
+    if ((Perct <= 59) && (Perct >= 50))
+
+        printf("You got 2nd division");
+
+    if ((Perct <= 49) && (Perct >= 40))
+
+        printf("You got 3rd division");
+
+    if (Perct < 40)
+        printf("failed");
+
+    printf("\nYour percentage is %d", Perct);
+    return 0;
+}
+--------------------------------------------------------------------------------------------
+/*Driver eligibility Question. Using logical operators.*/
+#include <stdio.h>
+int main()
+{
+    int age;
+    char sex, Ms;
+    printf("\nEnter age sex and marrital status :");
+    scanf("%d\n%c\n%c", &age, &sex, &Ms);
+  
+ 
+
+    if ((Ms == 'M') || (Ms == 'U' && sex == 'M' && age > 30) || (Ms == 'U' && sex == 'F' && age > 25))
+        printf("Driver is eligible.");
+    else
+
+        printf("Driver is not eligible.");
+
+    return 0;
+}
+--------------------------------------------------------------------------------------
+/*salary distribution criteria in acompany*/
+#include <stdio.h>
+int main()
+{
+    int YOS, salary = 0;
+    char Qual, gender; // for pst grad =P, for grad =G
+    printf("Enter gender ,Years of services and qualification :");
+    scanf("%c\n%d\n%c", &gender, &YOS, &Qual);
+
+    if ((gender == 'M') && (YOS >= 10) && (Qual == 'P'))
+        salary = 50000;
+    else if ((gender == 'M') && (YOS >= 10) && (Qual == 'G'))
+        salary = 40000;
+    if ((gender == 'M') && (YOS < 10) && (Qual == 'P'))
+        salary = 30000;
+    else if ((gender == 'M') && (YOS < 10) && (Qual == 'G'))
+        salary = 25000;
+    else if ((gender == 'F') && (YOS >= 10) && (Qual == 'P'))
+        salary = 45000;
+    else if ((gender == 'F') && (YOS >= 10) && (Qual == 'G'))
+        salary = 35000;
+    else if ((gender == 'F') && (YOS < 10) && (Qual == 'P'))
+        salary = 25000;
+    else if ((gender == 'F') && (YOS < 10) && (Qual == 'G'))
+        salary = 20000;
+
+    printf("Salary of the employee =%d", salary);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+//ages of 3 lids are entered write a program to find younges out of them.
+#include <stdio.h>
+int main()
+{
+  int age, a1, a2, a3; //a1=ram, a2=shyam, a3=ajay.
+  printf("Enter the age of the child 1 =");
+  scanf("%d", &a1);
+  printf("Enter the age of the child 2 =");
+  scanf("%d", &a2);
+  printf("Enter the age of the child 3=");
+  scanf("%d", &a3);
+
+  if (a1 <= a2 && a1 <= a3)
+    printf("\nRam is youngest out of them.");
+  else if (a2 <= a1 && a2 <= a3)
+    printf("\n Shyam is youngest out of them.");
+  else if (a3 <= a1 && a3 <= a2)
+    printf("\n Ajay is youngest out of them.");
+  return 0;
+}
+-----------------------------------------------------------------------------------
+//Check weather 3 points lie in same line
+// Here, slopes of 3 points must be equal
+#include <stdio.h>
+int main()
+{
+  int x1, x2, x3, y1, y2, y3, s1, s2, s3;
+  printf("Enter the value of point x1,y1 =");
+  scanf("%d\n%d", &x1, &y1);
+  printf("Enter the value of point x2,y2 =");
+  scanf("%d\n%d", &x2, &y2);
+  printf("Enter the value of point x3,y3 =");
+  scanf("%d\n%d", &x3, &y3);
+
+  s1 = (y2 - y1) / (x2 - x1);
+  s2 = (y3 - y1) / (x3 - x1);
+  s3 = (y2 - y3) / (x2 - x3);
+
+  if ((s1 == s2 && s2 == s3))
+   printf("\n These points lie in same line.");
+  else
+    printf("\n These points does not lie in same line.");
+
+  return 0;
+}
+-------------------------------------------------------------------------
+//Carbon content graded steel
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int hard, Crcont, Tensile;
+  printf("Enter the hardness of steel =");
+  scanf("%d", &hard);
+  printf("Enter the Carbon content of steel =");
+  scanf("%d", &Crcont);
+  printf("Enter the  of Tensile strength steelt =");
+  scanf("%d", &Tensile);
+
+  if ((hard > 50) && (Crcont < 0.7) && (Tensile > 5600))
+    printf("\nSteel is of grade 10");
+  else if ((hard > 50) && (Crcont < 0.7))
+    printf("\nSteel is of grade 9");
+  else if ((Crcont < 0.7) && (Tensile > 5600))
+    printf("\nSteel is of grade 8");
+  else if ((hard > 50) && (Tensile > 5600))
+    printf("\nSteel is of grade 7");
+  else if ((hard > 50) || (Crcont < 0.7) || (Tensile > 5600))
+    printf("\nSteel is of grade 6");
+  else
+    printf("\nSteel is of grade 5");
+  return 0;
+}
+------------------------------------------------------------------------------
+//fine charging in a librery.
+#include <stdio.h>
+int main()
+{
+  int days;
+  printf("Enter the due days after the books are returned =");
+  scanf("%d", &days);
+
+  if (days <= 5)
+    printf("\nFine = 50 paise.");
+
+  else if ((days >= 6) && (days <= 10))
+    printf("\nFine = 1 rupees.");
+
+  else if ((days > 10) && (days <= 30))
+    printf("\nFine = 5 rupees.");
+
+  else if (days > 30)
+    printf("\nYour membership is cancelled.");
+
+  return 0;
+}
+----------------------------------------------------------------------------
+
+
+
